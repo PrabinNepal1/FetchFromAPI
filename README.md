@@ -1,3 +1,4 @@
+>>>>>>> HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# FetchFromAPI
+Here I will be using React.Js to fetch from the API. With some HTML and CSS, the fetched data will then be represented in proper format and design. Furthermore we will filter some data and also try to do some sorting and searching. 
+>>>>>>> 2e8a6b396bb66018e03ef75a790164306177aa5f
