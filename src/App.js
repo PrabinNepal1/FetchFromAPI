@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
 
 function App() {
+
+  const [data, setData] = useState(null);
+
+
+  async function getData()
+    {
+        //await the response of the fetch call
+       let response = await fetch('https://api.github.com/users');
+        //proceed once the first promise is resolved.
+       let data = await response.json()
+        //proceed only when the second promise is resolved
+        return data;
+    }
+
+  useEffect(() => {
+    getData()
+    .then(data => setData(data));
+  },[])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div><h2>Fetch From API</h2></div>
+    <div className="fetchedData">
+    {data && data.map((data, index) => {
+      return(
+          <div className="data" key={index}>
+            <h3>{data.login}</h3>
+          </div>
+      );
+
+    })}
+    </div>
     </div>
   );
 }
